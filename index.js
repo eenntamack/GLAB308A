@@ -111,24 +111,24 @@ class Adventurer extends Character{
            this.role = role; 
         }
     }
-
+    //implemented an ability system that will happen by chance
     ability(){
+        //chance for ability to happen
         let chance = Math.floor(Math.random() * 10)
         if (this.role == "Fighter"){
             if(chance > 7){
+                //sets fighters damage to 10 if ability happens
                 console.log("Fighter used his ability!!")
                 this.damage = 10 
                 console.log(`Fighter will do ${this.damage} damage`)
-
             }else{
+                //else the role failed
                 console.log("The fighter attempted to use his ability but failed!")
                 
             }
-            
-            
-
         }else if(this.role == "Healer"){
             if(chance > 7){
+                //healer heals 10 hp
                 console.log("Healer has used his ability!!")
                 console.log("Healer has gained 10 hp his ability!!")
                 console.log("\n")
@@ -138,16 +138,19 @@ class Adventurer extends Character{
                 }
                 
             }else{
+                //else will fail
                 console.log("The healer attempted to use his ability but failed!")
             }
         }else if(this.role == "Wizard"){
             if(chance > 7){
+                //wiard will heal 5 and deal 5dmg
                 console.log("Wizard has used his ability!!")
                 console.log("The wizard will heal 5hp and deal 5 dmg!!")
                 console.log("\n")
                 this.damage += 5
                 this.health += 5
             }else{
+                //else will fail
                 console.log("The wizard attempted to use his ability but failed!")
             }
         }
@@ -161,15 +164,17 @@ class Adventurer extends Character{
     duel(Adventurer){
         console.log(this.role + ' vs ' + Adventurer.role)
         while(this.health>= 50 || Adventurer.health >= 50){
+            let current = this.roll()
+            let opposing = Adventurer.roll();
+            //Reset damage (whether or not any of the roles used an ability to deal more damage)
             this.damage = 1
             Adventurer.damage = 1
+            //breaks out of the while loop if any of their healths fall below 50
             if(this.health <= 50){
                 break
             }else if(Adventurer.health <= 50){
                 break
             }
-            let current = this.roll()
-            let opposing = Adventurer.roll();
             if(current > opposing){
                 this.ability()
                 Adventurer.health -= this.damage
@@ -177,13 +182,18 @@ class Adventurer extends Character{
                 Adventurer.ability()
                 this.health -= Adventurer.damage
             }
+
+            //Logs the hp of  both opponents to keep track of whats happeneing in the duel
             console.log(`The ${Adventurer.role}'s hp is currently ${Adventurer.health}`)
             console.log(`The ${this.role}'s hp is currently ${this.health}`)
             console.log("\n")
         }
+
+        //logs the final results of their duel
         console.log(`The ${this.role} has ${this.health} hp`)
         console.log(`The ${Adventurer.role} has ${Adventurer.health} hp`)
 
+        //logs whoever the curernt winner is
         if(this.health > Adventurer.health){
             console.log(`The ${this.role} wins`)
 
@@ -217,15 +227,17 @@ class AdventurerFactory {
       return this.adventurers.find((a) => a.name === name);
     }
   }
-  
+  //creating a healer
   const healers = new AdventurerFactory("Healer");
   const robin = healers.generate("Robin");
 
+  //creating a fighter
   const fighters = new AdventurerFactory("Fighter");
   const alex = fighters.generate("Alex");
 
-
+  //logging for debugging
   console.log(robin)
+  console.log(alex)
 
-
+  //implementing dueling
   robin.duel(alex)
