@@ -1,5 +1,5 @@
 //PART 1------------------------------------------|
-console.log("Part 1")
+console.log("Part 1 commented out in file")
 // const adventurer = {
 //     name: "Robin",
 //     health: 10,
@@ -27,7 +27,7 @@ console.log("Part 1")
 // adventurer.roll()
 // adventurer.roll()
 //PART 2------------------------------------------|
-console.log("Part 2")
+console.log("Part 2 commented out in file")
 // class Character{
 //     constructor(name){
 //         this.name = name;
@@ -52,7 +52,7 @@ console.log("Part 2")
 // robin.companion.companion.inventory = ["small hat", "sunglasses"];
 
 //PART 3------------------------------------------|
-console.log("Part 3")
+console.log("Part 3 commented out in file")
 // class Adventurer extends Character{
 //     constructor(name,role){
 //         super(name);
@@ -80,7 +80,8 @@ console.log("Part 3")
 // const frank = new Companion("Frank","Flea",['Hat','Sunglasses'])
 // console.log(frank.belongings)
 
-//PART 4 
+//PART 4
+console.log("PART 4")
 class Character{
     constructor(name){
         this.name = name;
@@ -233,8 +234,12 @@ class AdventurerFactory {
   const alex = fighters.generate("Alex");
 
   //logging for debugging
+  console.log("_____Debugging roles below______")
   console.log(robin)
   console.log(alex)
+  console.log("\n")
 
   //implementing dueling
+  console.log("______Dueling system below______")
   robin.duel(alex)
+  console.log("\n")
