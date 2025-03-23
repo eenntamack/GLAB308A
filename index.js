@@ -66,7 +66,6 @@ console.log("Part 3")
 // }
 
 // class Companion extends Character{
-    
 //     constructor(name,type,[...belongings]){
 //         super(name);
 //         this.type = type;
@@ -123,8 +122,7 @@ class Adventurer extends Character{
                 console.log(`Fighter will do ${this.damage} damage`)
             }else{
                 //else the role failed
-                console.log("The fighter attempted to use his ability but failed!")
-                
+                console.log("The fighter attempted to use his ability but failed!")             
             }
         }else if(this.role == "Healer"){
             if(chance > 7){
@@ -135,8 +133,7 @@ class Adventurer extends Character{
                 this.health += 10;  
                 if(this.health > Character.MAX_HEALTH){
                     this.health = 100;
-                }
-                
+                }              
             }else{
                 //else will fail
                 console.log("The healer attempted to use his ability but failed!")
