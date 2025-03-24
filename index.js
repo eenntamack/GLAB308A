@@ -129,7 +129,7 @@ class Adventurer extends Character{
             if(chance > 7){
                 //healer heals 10 hp
                 console.log("Healer has used his ability!!")
-                console.log("Healer has gained 10 hp his ability!!")
+                console.log("Healer has gained 10 hp!!")
                 console.log("\n")
                 this.health += 10;  
                 if(this.health > Character.MAX_HEALTH){
