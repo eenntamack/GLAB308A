@@ -1,3 +1,8 @@
+/****
+ * 
+ * !!!!import and export at line 100!!!!!!!
+ */
+
 //PART 1------------------------------------------|
 //console.log("Part 1 commented out in file")
 // const adventurer = {
@@ -27,7 +32,7 @@
 // adventurer.roll()
 // adventurer.roll()
 //PART 2------------------------------------------|
-console.log("Part 2 commented out in file")
+//console.log("Part 2 commented out in file")
 // class Character{
 //     constructor(name){
 //         this.name = name;
@@ -52,7 +57,7 @@ console.log("Part 2 commented out in file")
 // robin.companion.companion.inventory = ["small hat", "sunglasses"];
 
 //PART 3------------------------------------------|
-console.log("Part 3 commented out in file")
+//console.log("Part 3 commented out in file")
 // class Adventurer extends Character{
 //     constructor(name,role){
 //         super(name);
